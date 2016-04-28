@@ -1,0 +1,23 @@
+{{ partial "header.html" . }}
+
+<h1>{{ .Title }}</h1>
+
+{{ range .Data.Pages }}
+  <blockquote>
+  <section class="post-summary">
+    <h2><a href="{{ .Permalink }}">{{ .Title }}</a> <time>{{ .Date.Format "January 2006" }}</time></h2>
+
+    <p>
+      {{ .Summary }}
+    </p>
+    {{ if .Truncated }}
+    <p>
+      <a href="{{ .Permalink }}">Read more &#xbb;</a>
+    </p>
+    {{ end }}
+
+  </section>
+  </blockquote>
+{{ end }}
+
+{{ partial "footer.html" . }}

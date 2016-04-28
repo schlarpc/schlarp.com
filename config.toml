@@ -1,0 +1,5 @@
+baseurl = "https://schlarp.com/"
+languageCode = "en-us"
+title = "schlarpc"
+disableRSS = true
+disableSitemap = true

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>{{ if $.IsNode }} {{ .Site.Title }} {{ else }} {{ .Title }} - {{ .Site.Title }} {{ end }}</title>
+    <link rel="icon" type="image/png" href="{{ .Site.BaseURL }}images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ .Site.BaseURL }}images/favicon-16x16.png" sizes="16x16">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/milligram.css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/flexboxgrid.css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/styles.css">
+  </head>
+  <body>
+    <div class="wrap container-fluid">
+      <header class="site-title row">
+        <div class="col-lg-12">
+          <span class="import-statement">&gt;&gt;&gt; import </span><a href="{{ .Site.BaseURL }}">schlarp.chaz</a>
+        </div>
+      </header>
+      <div class="site-body row">
+        <input type="checkbox" id="site-nav-enable-checkbox">
+        <label class="site-nav-enable col-xs-12 link" for="site-nav-enable-checkbox">site navigation &#xbb;</label>
+        <nav class="site-nav col-sm-3 col-xs-12">
+          <ul>
+            <li class="list-heading">Projects</li>
+            {{ range first 3 (where .Site.Pages "Type" "projects") }}
+            <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+            {{ end }}
+            <li><a href="{{ .Site.BaseURL }}projects/">View all &#xbb;</a></li>
+          </ul>
+          <ul>
+            <li class="list-heading">Ramblings</li>
+            {{ range first 3 (where .Site.Pages "Type" "posts") }}
+            <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+            {{ end }}
+            <li><a href="{{ .Site.BaseURL }}posts/">View all &#xbb;</a></li>
+          </ul>
+          <ul>
+            <li class="list-heading">Profiles</li>
+            <li><a href="https://github.com/schlarpc">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/schlarpc">LinkedIn</a></li>
+            <li><a href="https://www.youtube.com/user/schlarpc">YouTube</a></li>
+            <li><a href="https://steamcommunity.com/id/schlarpc">Steam</a></li>
+          </ul>
+        </nav>
+        <article class="site-content col-sm-9 col-xs-12">
