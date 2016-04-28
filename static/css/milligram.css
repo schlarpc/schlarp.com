@@ -198,15 +198,14 @@ code {
 }
 
 pre {
-  background: #f4f5f6;
-  border-left: 0.3rem solid #323742;
+  border: 0.3rem solid #323742;
   font-family: "Menlo", "Consolas", "Bitstream Vera Sans Mono", "DejaVu Sans Mono", "Monaco", monospace;
 }
 pre > code {
   background: transparent;
   border-radius: 0;
   display: block;
-  padding: 1rem 1.5rem;
+  padding: 1rem;
   white-space: pre;
 }
 
@@ -230,7 +229,7 @@ select {
      -moz-appearance: none;
           appearance: none;
   background-color: transparent;
-  border: 0.1rem solid #d1d1d1;
+  border: 0.1rem solid #323742;
   border-radius: 0.4rem;
   box-shadow: none;
   height: 3.8rem;
@@ -246,7 +245,7 @@ input[type='text']:focus,
 input[type='url']:focus,
 textarea:focus,
 select:focus {
-  border: 0.1rem solid #323742;
+  border: 0.1rem solid #d1d1d1;
   outline: 0;
 }
 

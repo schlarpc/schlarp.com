@@ -140,3 +140,28 @@ h1 time {
     color: #ddd;
     font-size: 3rem;
 }
+
+pre > code {
+    font-family: monospace;
+    color: #f4f5f6;
+    max-height: 20rem;
+    background-color: #4c5260;
+    overflow: scroll;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+aside {
+    text-align: center;
+}
+
+input {
+    color: #eee;
+}
+
+label {
+    font-weight: normal;
+}
+code {
+    background-color: #323742;
+}
