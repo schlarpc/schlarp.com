@@ -24,7 +24,7 @@ _(Note: currently not wired up on this new site. Will be fixed soon.)_
         <input type="text" value="0" name="weight" />
     </label>
     <label>
-        <input type="submit" value="Convert" />
+        <input type="submit" disabled="disabled" value="Convert" />
     </label>
 </form>
 
