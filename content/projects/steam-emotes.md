@@ -4,7 +4,6 @@ draft = false
 title = "Steam Emotifier"
 +++
 
-_(Note: currently not wired up on this new site. Will be fixed soon.)_
 
 <form method="POST" enctype="multipart/form-data">
     <label>
@@ -27,6 +26,8 @@ _(Note: currently not wired up on this new site. Will be fixed soon.)_
         <input type="submit" disabled="disabled" value="Convert" />
     </label>
 </form>
+
+_(Note: currently not wired up on this new site. Will be fixed soon.)_
 
 
 ## What is this?
