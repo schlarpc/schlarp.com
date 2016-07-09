@@ -1,5 +1,9 @@
 {{ partial "header.html" . }}
 
-<h1>stuff</h1>
+{{ range .Data.Pages }}
+    {{if eq .Type "index" }}
+        {{.Content}}
+    {{end}}
+{{ end }}
 
 {{ partial "footer.html" . }}
