@@ -8,4 +8,8 @@ title = "Alexa"
 Amazon Alexa/Echo. The API isn't stable at the moment, but it has working code for
 speech synthesis and use of the Alexa Voice Service v1.
 
-Check out [alexa on GitHub](https://github.com/schlarpc/alexa).
+<s>Check out [alexa on GitHub](https://github.com/schlarpc/alexa).</s>
+
+Unfortunately, my employer requested that I get a formal review of this package before releasing it
+to the public. I've pulled down the GitHub repo in the meantime, pending me caring enough to get the
+project reviewed.
