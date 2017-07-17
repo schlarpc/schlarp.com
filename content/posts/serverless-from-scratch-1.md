@@ -130,8 +130,9 @@ Default output format [None]:
 Before we continue, a note about the confidentiality of various bits of data within AWS.
 Your account ID and any access key IDs are not intended to be secret. I'm redacting
 mine out of a sense of paranoia. Secret access keys, however, should _never_ be posted
-publicly, including in a git repository. If you accidentally leak a secret access key,
-you should immediately rotate the credentials by creating a new key and disabling the old one.
+publicly, including in a Git repository. If you accidentally leak a secret access key,
+you should immediately rotate the credentials by creating a new key and disabling or revoking
+the old one.
 
 Additionally, you may have wondered where the choice of region (`us-west-2`) came from.
 In AWS, regions are mostly siloed away from each other, with cross-region interaction being a very
