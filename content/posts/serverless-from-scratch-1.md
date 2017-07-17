@@ -104,7 +104,7 @@ AKIA and the one that's censored out by default. Leave this page open for now, w
 soon.
 
 <aside>
-    <img src="/images/serverless/01-06.png" alt="IAM user credentials" />
+    <img src="/images/serverless/01-07.png" alt="IAM user credentials" />
     <em>Getting our IAM user credentials</em>
 </aside>
 
