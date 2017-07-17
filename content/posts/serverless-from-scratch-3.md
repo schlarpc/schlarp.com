@@ -141,7 +141,7 @@ drop any cached copies of the old version of the site. While this will cause mor
 invalidations than are strictly necessary, it's a good starting point until we put together a more
 comprehensive versioning and caching strategy.
 
-Once that's rolled out - and that might take a while, CloudFormation distributions update slowly -
+Once that's rolled out - and that might take a while, CloudFront distributions update slowly -
 you might be tempted to try loading that `FrontendUrl` output we defined. Well, that won't work
 quite yet. For one, we haven't pushed our files into S3 yet, which will require a change to our
 deployment script. But, more importantly, our S3 bucket is still completely private! Since we want
