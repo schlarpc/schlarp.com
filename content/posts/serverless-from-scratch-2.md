@@ -1,6 +1,6 @@
 +++
 date = "2017-07-16T13:00:00-00:00"
-draft = false
+draft = true
 title = "Serverless from Scratch #2"
 +++
 
