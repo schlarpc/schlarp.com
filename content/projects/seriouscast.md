@@ -2,6 +2,9 @@
 date = "2014-01-01T00:00:00-00:00"
 draft = false
 title = "SeriousCast"
+
+[build]
+  list = "never"
 +++
 
 _(Note: SeriousCast was broken by a SiriusXM backend update in November 2015. It has not been

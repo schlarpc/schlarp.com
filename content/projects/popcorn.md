@@ -2,6 +2,9 @@
 date = "2014-07-22T00:00:00-00:00"
 draft = false
 title = "Popcorn"
+
+[build]
+  list = "never"
 +++
 
 Popcorn was a pair of attempts to get synchronized video streaming and playback state across

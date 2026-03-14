@@ -2,6 +2,9 @@
 date = "2014-03-21T00:00:00-00:00"
 draft = false
 title = "Steam Emotifier"
+
+[build]
+  list = "never"
 +++
 
 

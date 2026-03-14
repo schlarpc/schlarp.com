@@ -2,6 +2,9 @@
 date = "2020-09-23T12:00:00-00:00"
 draft = false
 title = "Stupid CloudFormation Tricks #1: String replacement and changing case"
+
+[build]
+  list = "never"
 +++
 
 _(Note: I work for AWS, but this article is my own opinion as an avid CloudFormation user.

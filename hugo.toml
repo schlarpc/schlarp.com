@@ -1,0 +1,21 @@
+baseURL = "https://schlarp.com/"
+languageCode = "en-us"
+title = "schlarp.com"
+
+[outputs]
+  home = ["HTML", "RSS"]
+
+[outputFormats.RSS]
+  baseName = "feed"
+
+[taxonomies]
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.highlight]
+  style = "catppuccin-mocha"
+
+[params]
+  description = "Chaz Schlarp's personal blog"
+  author = "Chaz Schlarp"

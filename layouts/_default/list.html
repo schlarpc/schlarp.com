@@ -1,21 +1,11 @@
-{{ partial "header.html" . }}
-
+{{ define "main" }}
 <h1>{{ .Title }}</h1>
-
-{{ range .Data.Pages }}
-  <blockquote>
-  <section class="post-summary">
-    <h2><a href="{{ .Permalink }}">{{ .Title }}</a> <time>{{ .Date.Format "January 2006" }}</time></h2>
-
-    <p>
-      {{ .Summary }}
-    </p>
-    <p>
-      <a href="{{ .Permalink }}">Read more &#xbb;</a>
-    </p>
-
-  </section>
-  </blockquote>
+<ul class="post-list">
+  {{ range .Pages }}
+  <li>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+  </li>
+  {{ end }}
+</ul>
 {{ end }}
-
-{{ partial "footer.html" . }}

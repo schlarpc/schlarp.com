@@ -2,6 +2,9 @@
 date = "2013-01-01T00:00:00-00:00"
 draft = false
 title = "TF2 Server Browser"
+
+[build]
+  list = "never"
 +++
 
 This is an alternative server browser for TF2 (and potentially other Source games in the future)

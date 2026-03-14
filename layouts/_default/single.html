@@ -1,7 +1,7 @@
-{{ partial "header.html" . }}
-
-<h1>{{ .Title }} <time>{{ .Date.Format "January 2006" }}</time></h1>
-
-{{ .Content }}
-
-{{ partial "footer.html" . }}
+{{ define "main" }}
+<article>
+  <h1>{{ .Title }}</h1>
+  {{ with .Date }}<time datetime="{{ .Format "2006-01-02" }}">{{ .Format "January 2, 2006" }}</time>{{ end }}
+  {{ .Content }}
+</article>
+{{ end }}

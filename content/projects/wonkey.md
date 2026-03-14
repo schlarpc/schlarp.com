@@ -2,6 +2,9 @@
 date = "2016-06-26T00:00:00-00:00"
 draft = false
 title = "Wonkey"
+
+[build]
+  list = "never"
 +++
 
 `wonkey` is a Python web service for image sharing with encryption at rest. I built it for use with

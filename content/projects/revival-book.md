@@ -2,6 +2,9 @@
 date = "2013-08-11T00:00:00-00:00"
 draft = false
 title = "Revival Book"
+
+[build]
+  list = "never"
 +++
 
 Revival Book is a small Forge mod for Minecraft 1.5.2

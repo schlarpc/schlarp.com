@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="150 0 550 520" font-family="system-ui, -apple-system, sans-serif" font-size="12">
+  <!-- Isometric cutaway of the Surface table interior.
+       Looking down at ~30deg. X-axis goes right, Y-axis goes down-right, Z-axis goes up.
+       Surface top is a parallelogram; we see into the cavity below.
+       Updated: shows rear diffused illumination (not FTIR). -->
+
+  <!-- ============ ACRYLIC SURFACE (top face) ============ -->
+  <!-- Parallelogram: top-left, top-right, bottom-right, bottom-left -->
+  <polygon points="200,40 560,40 660,140 300,140" fill="#889" fill-opacity="0.15" stroke="#999" stroke-width="1.5"/>
+  <text x="340" y="55" fill="#aaa" text-anchor="middle" font-size="13">acrylic surface</text>
+
+  <!-- Finger touching surface -->
+  <ellipse cx="400" cy="85" rx="18" ry="10" fill="#d4a574" stroke="#b88" stroke-width="1"/>
+  <text x="400" y="72" fill="#ccc" text-anchor="middle" font-size="11">finger</text>
+
+  <!-- IR reflecting back down at finger contact point -->
+  <line x1="395" y1="95" x2="385" y2="180" stroke="#c44" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="400" y1="97" x2="400" y2="185" stroke="#c44" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="405" y1="95" x2="415" y2="180" stroke="#c44" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="440" y="150" fill="#c44" font-size="10">IR reflects</text>
+  <text x="440" y="162" fill="#c44" font-size="10">back down</text>
+
+  <!-- ============ TABLE CAVITY (side walls) ============ -->
+  <!-- Left wall -->
+  <line x1="200" y1="40" x2="200" y2="340" stroke="#666" stroke-width="1"/>
+  <!-- Front-left wall -->
+  <line x1="300" y1="140" x2="300" y2="440" stroke="#666" stroke-width="1"/>
+  <!-- Front-right wall -->
+  <line x1="660" y1="140" x2="660" y2="440" stroke="#666" stroke-width="1"/>
+  <!-- Back-right wall -->
+  <line x1="560" y1="40" x2="560" y2="340" stroke="#666" stroke-width="1"/>
+
+  <!-- Bottom face -->
+  <polygon points="200,340 560,340 660,440 300,440" fill="#222" fill-opacity="0.3" stroke="#555" stroke-width="1"/>
+
+  <!-- Front wall face (partially transparent to see inside) -->
+  <polygon points="300,140 660,140 660,440 300,440" fill="#333" fill-opacity="0.08" stroke="#555" stroke-width="1"/>
+
+  <!-- ============ COMPONENTS INSIDE ============ -->
+
+  <!-- IR illuminant below surface -->
+  <rect x="330" y="240" width="70" height="25" fill="none" stroke="#c44" stroke-width="1.5"/>
+  <text x="365" y="257" fill="#c44" text-anchor="middle" font-size="9">IR illuminant</text>
+
+  <!-- IR light projecting upward toward surface (diffuse flood) -->
+  <line x1="340" y1="240" x2="280" y2="120" stroke="#c44" stroke-width="1" stroke-dasharray="4,3" stroke-opacity="0.35"/>
+  <line x1="355" y1="240" x2="350" y2="100" stroke="#c44" stroke-width="1" stroke-dasharray="4,3" stroke-opacity="0.35"/>
+  <line x1="365" y1="240" x2="400" y2="95" stroke="#c44" stroke-width="1.2" stroke-dasharray="4,3" stroke-opacity="0.5"/>
+  <line x1="375" y1="240" x2="450" y2="100" stroke="#c44" stroke-width="1" stroke-dasharray="4,3" stroke-opacity="0.35"/>
+  <line x1="390" y1="240" x2="540" y2="110" stroke="#c44" stroke-width="1" stroke-dasharray="4,3" stroke-opacity="0.35"/>
+  <text x="290" y="200" fill="#c44" font-size="10">IR floods</text>
+  <text x="290" y="212" fill="#c44" font-size="10">surface ↑</text>
+
+  <!-- Camera 1: back-left corner -->
+  <rect x="225" y="290" width="40" height="25" fill="none" stroke="#a66" stroke-width="1.5"/>
+  <circle cx="245" cy="302" r="6" fill="none" stroke="#a66" stroke-width="1"/>
+  <text x="245" y="328" fill="#a66" text-anchor="middle" font-size="9">cam 1</text>
+
+  <!-- Camera 2: back-right corner -->
+  <rect x="510" y="290" width="40" height="25" fill="none" stroke="#a66" stroke-width="1.5"/>
+  <circle cx="530" cy="302" r="6" fill="none" stroke="#a66" stroke-width="1"/>
+  <text x="530" y="328" fill="#a66" text-anchor="middle" font-size="9">cam 2</text>
+
+  <!-- Camera 3: front-left corner -->
+  <rect x="325" y="390" width="40" height="25" fill="none" stroke="#a66" stroke-width="1.5"/>
+  <circle cx="345" cy="402" r="6" fill="none" stroke="#a66" stroke-width="1"/>
+  <text x="345" y="428" fill="#a66" text-anchor="middle" font-size="9">cam 3</text>
+
+  <!-- Camera 4: front-right corner -->
+  <rect x="610" y="390" width="40" height="25" fill="none" stroke="#a66" stroke-width="1.5"/>
+  <circle cx="630" cy="402" r="6" fill="none" stroke="#a66" stroke-width="1"/>
+  <text x="630" y="428" fill="#a66" text-anchor="middle" font-size="9">cam 4</text>
+
+  <!-- Camera 5: center (next to projector) -->
+  <rect x="435" y="350" width="40" height="25" fill="none" stroke="#a66" stroke-width="1.5"/>
+  <circle cx="455" cy="362" r="6" fill="none" stroke="#a66" stroke-width="1"/>
+  <text x="455" y="388" fill="#a66" text-anchor="middle" font-size="9">cam 5</text>
+
+  <!-- Projector: center -->
+  <rect x="370" y="340" width="55" height="35" fill="none" stroke="#7a7" stroke-width="1.5"/>
+  <text x="397" y="362" fill="#7a7" text-anchor="middle" font-size="9">projector</text>
+
+  <!-- Projection cone (dashed lines going up to surface) -->
+  <line x1="385" y1="340" x2="330" y2="140" stroke="#7a7" stroke-width="1" stroke-dasharray="4,4" stroke-opacity="0.4"/>
+  <line x1="415" y1="340" x2="600" y2="140" stroke="#7a7" stroke-width="1" stroke-dasharray="4,4" stroke-opacity="0.4"/>
+
+  <!-- Dashed lines from cameras toward reflected IR point -->
+  <line x1="245" y1="290" x2="395" y2="180" stroke="#a66" stroke-width="0.8" stroke-dasharray="3,4" stroke-opacity="0.3"/>
+  <line x1="530" y1="290" x2="405" y2="180" stroke="#a66" stroke-width="0.8" stroke-dasharray="3,4" stroke-opacity="0.3"/>
+  <line x1="345" y1="390" x2="395" y2="185" stroke="#a66" stroke-width="0.8" stroke-dasharray="3,4" stroke-opacity="0.3"/>
+  <line x1="630" y1="390" x2="410" y2="185" stroke="#a66" stroke-width="0.8" stroke-dasharray="3,4" stroke-opacity="0.3"/>
+  <line x1="455" y1="350" x2="402" y2="185" stroke="#a66" stroke-width="0.8" stroke-dasharray="3,4" stroke-opacity="0.3"/>
+
+  <!-- ============ HYDRA CARD ============ -->
+  <!-- PCI card at the bottom, connected via cable/bus -->
+  <rect x="240" y="470" width="180" height="35" fill="none" stroke="#88a" stroke-width="1.5"/>
+  <text x="330" y="492" fill="#aac" text-anchor="middle" font-size="11">Hydra PCI card (TI DSP)</text>
+
+  <!-- Connection from cameras to card -->
+  <line x1="330" y1="440" x2="330" y2="470" stroke="#666" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="345" y="460" fill="#666" font-size="9">to host</text>
+</svg>

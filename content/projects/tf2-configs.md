@@ -2,6 +2,9 @@
 date = "2013-01-01T00:00:00-00:00"
 draft = false
 title = "TF2 Configs"
+
+[build]
+  list = "never"
 +++
 
 _(Note: these are old and crufty and probably don't fully reflect the state of the game at this
