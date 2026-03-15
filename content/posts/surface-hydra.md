@@ -33,6 +33,8 @@ TI DSP and passed to userspace for computer vision processing to turn frames int
 
 ![Simplified diagram of Surface rear diffused illumination touch detection](/images/surface-hydra/rear-di-diagram.svg)
 
+![Inside the Surface projection chamber, showing the projector and five IR cameras](/images/surface-hydra/projection-chamber.jpg)
+
 My partner found several for sale at an e-cycler on Craigslist in 2019. It's been our coffee table
 ever since. Unfortunately, while it's good at being a table and is an interesting conversation piece,
 it hasn't been particularly useful for computing due to the age of the computer inside. Ideally,
@@ -224,6 +226,7 @@ improved code quality. The test suite was, of course, instrumental in keeping ev
 
 * A cross-validation pass between the code and the test suite identified that 34 of the tests would effectively always pass; they were exercising IOCTLs and logging some data, but made no assertions about the data in the response from the driver.
 * Multi-client tests were flaky because the original driver uses a background thread to continually process frames, while the reimplementation only processes deltas while servicing IOCTL requests.
+* When comparing latencies between the two drivers, I noticed that Claude had put a "warmup" set of transfers in the `START_STREAMING` IOCTL, making it take significantly longer than the reference. Once I pointed this out and it was removed, we started getting torn data in the camera frames. It turns out that it had implemented the double buffering incorrectly, and the warmup time was hiding any visible symptom of it reading the wrong buffer.
 
 ## Results
 
