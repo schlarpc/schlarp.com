@@ -34,6 +34,7 @@ TI DSP and passed to userspace for computer vision processing to turn frames int
 ![Simplified diagram of Surface rear diffused illumination touch detection](/images/surface-hydra/rear-di-diagram.svg)
 
 ![Inside the Surface projection chamber, showing the projector and five IR cameras](/images/surface-hydra/projection-chamber.jpg)
+*Inside the projection chamber with the screen removed. The projector lens is in the center, flanked by the five IR cameras that capture touch and object data.*
 
 My partner found several for sale at an e-cycler on Craigslist in 2019. It's been our coffee table
 ever since. Unfortunately, while it's good at being a table and is an interesting conversation piece,
