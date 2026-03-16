@@ -97,6 +97,11 @@ footer a:hover {
 /* Post listing */
 .post-list {
   list-style: none;
+  padding-left: 0;
+}
+
+.post-list > li::before {
+  content: none;
 }
 
 .post-list li {
@@ -132,14 +137,24 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.3;
   margin-top: 2rem;
   margin-bottom: 0.75rem;
+  color: #e0e4ff;
 }
 
-h2 { font-size: 1.4rem; }
-h3 { font-size: 1.2rem; }
+h2 {
+  font-size: 1.4rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.3rem;
+}
+
+h3 {
+  font-size: 1.15rem;
+  color: var(--text);
+}
 
 p {
   margin-bottom: 1rem;
   text-align: justify;
+  text-justify: inter-character;
   text-wrap: pretty;
 }
 
@@ -154,41 +169,24 @@ ul {
 
 ul > li::before {
   content: "–";
-  color: var(--accent);
+  color: var(--text-muted);
   display: inline-block;
-  width: 1.5rem;
-  margin-left: -1.5rem;
+  width: 1.2em;
+  margin-left: -1.2em;
 }
 
-li {
-  margin-bottom: 0.4rem;
+li + li {
+  margin-top: 0.25rem;
 }
 
-li:last-child {
-  margin-bottom: 0;
+ul > li {
+  text-align: justify;
+  text-justify: inter-character;
+  text-wrap: pretty;
 }
 
-/* Tables */
-table {
-  width: 100%;
-  margin-bottom: 1rem;
-  border-collapse: collapse;
-  font-size: 0.9rem;
-}
-
-th, td {
-  padding: 0.5rem 0.75rem;
-  text-align: left;
-  border: 1px solid var(--border);
-}
-
-th {
-  background: var(--bg-light);
-  font-weight: 700;
-}
-
-tr:nth-child(even) {
-  background: rgba(36, 40, 59, 0.5);
+ol > li {
+  text-wrap: pretty;
 }
 
 /* Code */
@@ -218,6 +216,28 @@ pre code {
   font-size: 0.85rem;
 }
 
+/* Tables */
+table {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+th {
+  background: var(--bg-light);
+  font-weight: 700;
+}
+
+tr:nth-child(even) {
+  background: rgba(36, 40, 59, 0.5);
+}
+
 /* Blockquotes */
 blockquote {
   border-left: 3px solid var(--accent);
@@ -234,11 +254,15 @@ img {
   border-radius: 6px;
 }
 
-/* Image captions (img followed by italic text in same paragraph) */
-p > img ~ em {
+/* Image captions: a paragraph of only italic text following an image */
+img + em,
+p:has(> img) + p > em:only-child {
   display: block;
   text-align: center;
-  font-size: 0.9em;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
 }
 
 /* Emphasis */
