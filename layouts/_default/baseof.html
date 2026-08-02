@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+  {{ partial "head-meta.html" . }}
+  <link rel="canonical" href="{{ .Permalink }}">
   <link rel="stylesheet" href="/css/style.css">
   {{ with .Site.Home.OutputFormats.Get "rss" }}<link rel="alternate" type="{{ .MediaType.Type }}" title="{{ $.Site.Title }}" href="{{ .RelPermalink }}">{{ end }}
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">

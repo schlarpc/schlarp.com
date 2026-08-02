@@ -1,0 +1,30 @@
+{{- $title := cond .IsHome .Site.Title .Title -}}
+{{- $desc := .Site.Params.description -}}
+{{- with .Params.description }}{{ $desc = . }}{{ end -}}
+{{- $social := "" -}}
+{{- with .Params.images -}}
+  {{- with $.Resources.Get (index . 0) -}}
+    {{- if gt .Width 1200 -}}
+      {{- $social = .Fit "1200x1200 q82" -}}
+    {{- else -}}
+      {{- $social = . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+<meta name="description" content="{{ $desc }}">
+<meta name="author" content="{{ .Site.Params.author }}">
+<meta property="og:type" content="{{ cond .IsPage "article" "website" }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:url" content="{{ .Permalink }}">
+{{- if .IsPage }}{{ with .Date }}
+<meta property="article:published_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}">
+{{- end }}{{ end }}
+{{- with $social }}
+<meta property="og:image" content="{{ .Permalink }}">
+<meta property="og:image:width" content="{{ .Width }}">
+<meta property="og:image:height" content="{{ .Height }}">
+<meta property="og:image:alt" content="{{ $title }}">
+{{- end }}
+<meta name="twitter:card" content="{{ cond (ne $social "") "summary_large_image" "summary" }}">

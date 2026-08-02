@@ -1,6 +1,8 @@
 +++
 date = 2026-03-13
 title = "Dragging the Microsoft Surface table from 2008 to 2026 with Claude"
+description = "Reverse engineering the 2008 Microsoft Surface table's 32-bit PCI drivers with Claude and reimplementing them in Rust for 64-bit Windows, over four weeknights."
+images = ["projection-chamber.jpg"]
 +++
 
 I brought the 18-year-old Microsoft Surface / PixelSense table into the modern age over the course
