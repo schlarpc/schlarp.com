@@ -5,9 +5,6 @@ title = "schlarp.com"
 [outputs]
   home = ["HTML", "RSS"]
 
-[outputFormats.RSS]
-  baseName = "feed"
-
 [taxonomies]
 
 [markup.goldmark.renderer]
