@@ -62,7 +62,6 @@ header nav {
   padding: 1rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .site-name {
@@ -70,11 +69,6 @@ header nav {
     "Liberation Mono", monospace;
   font-size: 1.2rem;
   font-weight: 700;
-}
-
-.nav-links {
-  display: flex;
-  gap: 1.5rem;
 }
 
 /* Footer */
@@ -156,6 +150,7 @@ p {
   text-align: justify;
   text-justify: inter-character;
   text-wrap: pretty;
+  hyphens: auto;
 }
 
 ul, ol {
@@ -183,6 +178,7 @@ ul > li {
   text-align: justify;
   text-justify: inter-character;
   text-wrap: pretty;
+  hyphens: auto;
 }
 
 ol > li {
