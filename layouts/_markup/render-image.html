@@ -1,0 +1,20 @@
+{{- /* Render markdown images. Page-bundle resources get downscaled for the page,
+       with a click-through to the original. SVGs and remote/static paths pass through. */ -}}
+{{- $alt := .PlainText -}}
+{{- $src := .Destination -}}
+{{- $res := "" -}}
+{{- if not (or (hasPrefix $src "http") (hasPrefix $src "/")) -}}
+  {{- $res = .Page.Resources.Get $src -}}
+{{- end -}}
+{{- with $res -}}
+  {{- if eq .MediaType.SubType "svg" -}}
+    <img src="{{ .RelPermalink }}" alt="{{ $alt }}" loading="lazy" decoding="async">
+  {{- else if gt .Width 1200 -}}
+    {{- $small := .Fit "1200x1200 q82" -}}
+    <a href="{{ .RelPermalink }}"><img src="{{ $small.RelPermalink }}" alt="{{ $alt }}" width="{{ $small.Width }}" height="{{ $small.Height }}" loading="lazy" decoding="async"></a>
+  {{- else -}}
+    <img src="{{ .RelPermalink }}" alt="{{ $alt }}" width="{{ .Width }}" height="{{ .Height }}" loading="lazy" decoding="async">
+  {{- end -}}
+{{- else -}}
+  <img src="{{ $src }}" alt="{{ $alt }}" loading="lazy" decoding="async">
+{{- end -}}

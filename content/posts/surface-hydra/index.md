@@ -31,9 +31,9 @@ to not only detect finger touches but also recognize tagged objects placed on th
 The camera output is fed into a PCI card on an integrated host computer, where it is processed by a
 TI DSP and passed to userspace for computer vision processing to turn frames into "touches" and "objects".
 
-![Simplified diagram of Surface rear diffused illumination touch detection](/images/surface-hydra/rear-di-diagram.svg)
+![Simplified diagram of Surface rear diffused illumination touch detection](rear-di-diagram.svg)
 
-![Inside the Surface projection chamber, showing the projector and five IR cameras](/images/surface-hydra/projection-chamber.jpg)
+![Inside the Surface projection chamber, showing the projector and five IR cameras](projection-chamber.jpg)
 *Inside the projection chamber with the screen removed. The projector lens is in the center, flanked by the five IR cameras that capture touch and object data.*
 
 My partner found several for sale at an e-cycler on Craigslist in 2019. It's been our coffee table
@@ -103,7 +103,7 @@ hardware between OSes, and access to a kernel-level debugger. I came up with thi
   * Windows 11 64-bit for testing new driver ("target")
   * Windows 11 64-bit as kernel debug host connected to target over virtual serial ("debugger")
 
-![Dev environment architecture](/images/surface-hydra/dev-environment.svg)
+![Dev environment architecture](dev-environment.svg)
 
 I collaborated with Claude on what the ideal setup would be to make this work ergonomically for an agent.
 We settled on SSH servers on each guest, and a Samba mount back to the host for sharing code and binaries.
@@ -160,7 +160,7 @@ autonomously validating functionality at each checkpoint with the test suite:
 I let this run overnight, and within about 5 hours, the build had gone green with the entire test
 suite passing.
 
-![227/227 spec validation tests passing against the new driver](/images/surface-hydra/test-suite.jpg)
+![227/227 spec validation tests passing against the new driver](test-suite.jpg)
 *(Sorry for the phone photo - I stumbled downstairs at 5AM to check on it.)*
 
 Here's the `START_STREAMING` IOCTL handler - when a client starts streaming, the driver
@@ -215,8 +215,8 @@ failed, a mix of things that it figured out on its own and things I found during
 * The first crack at pulling pixel data from the DSP had the comment "DSP writes pixel data at 640-byte stride directly.", sourced from the specification. During debugging, Claude convinced itself this was wrong, performed some additional static analysis on `Hydra.sys`, found a tile-based stride conversion algorithm, implemented it, and then spent hours debugging issues with it. A raw dump finally proved that the original strategy was correct, and that the fix was to delete everything and go back to `memcpy`.
 * After all specification tests passed, I checked the captured frames and noticed that they were garbled with what appeared to be the wrong stride. After Claude fixed the issue, I noticed that the frames were flipped as compared to the reference driver. Claude wasn't able to notice this because it hadn't thought to look at the images using its own multimodal input, and it wasn't aware of the fiducial checkerboard pattern around the edges of four of the five cameras that could be used to check orientation.
 
-![Garbled camera output from incorrect stride](/images/surface-hydra/garbled.png)
-![Working camera output after stride fix](/images/surface-hydra/working.png)
+![Garbled camera output from incorrect stride](garbled.png)
+![Working camera output after stride fix](working.png)
 
 ### Refinement
 

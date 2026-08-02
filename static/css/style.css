@@ -254,9 +254,21 @@ img {
   border-radius: 6px;
 }
 
+/* Downscaled images link to the original */
+a:has(> img) {
+  display: inline-block;
+  cursor: zoom-in;
+}
+
+a:has(> img):hover {
+  text-decoration: none;
+}
+
 /* Image captions: a paragraph of only italic text following an image */
 img + em,
-p:has(> img) + p > em:only-child {
+a:has(> img) + em,
+p:has(> img) + p > em:only-child,
+p:has(> a > img) + p > em:only-child {
   display: block;
   text-align: center;
   font-size: 0.8rem;
