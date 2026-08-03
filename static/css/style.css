@@ -264,6 +264,12 @@ img {
   border-radius: 6px;
 }
 
+/* Centre images narrower than the column, which justified text would left-align */
+p:has(> img),
+p:has(> a > img) {
+  text-align: center;
+}
+
 /* Downscaled images link to the original */
 a:has(> img) {
   display: inline-block;
