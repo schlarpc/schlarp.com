@@ -69,6 +69,20 @@ header nav {
     "Liberation Mono", monospace;
   font-size: 1.2rem;
   font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.site-name:hover {
+  text-decoration: none;
+}
+
+/* Inherits the link colour, including on hover */
+.snowman {
+  width: 2rem;
+  height: 2rem;
+  flex: none;
 }
 
 /* Footer */
