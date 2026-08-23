@@ -259,8 +259,9 @@ blockquote {
   font-style: italic;
 }
 
-/* Images */
-img {
+/* Images and video */
+img,
+video {
   max-width: 100%;
   height: auto;
   border-radius: 6px;
@@ -268,7 +269,8 @@ img {
 
 /* Centre images narrower than the column, which would otherwise sit flush left */
 p:has(> img),
-p:has(> a > img) {
+p:has(> a > img),
+p:has(> video) {
   text-align: center;
 }
 
@@ -286,7 +288,8 @@ a:has(> img):hover {
 img + em,
 a:has(> img) + em,
 p:has(> img) + p > em:only-child,
-p:has(> a > img) + p > em:only-child {
+p:has(> a > img) + p > em:only-child,
+p:has(> video) + p > em:only-child {
   display: block;
   text-align: center;
   font-size: 0.8rem;
