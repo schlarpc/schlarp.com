@@ -99,7 +99,7 @@ The indicator LED turns out to have a
 in the firmware that dictate color, blink pattern, etc. that are indexed into for various device states. I had
 Claude write a tool to patch out the table entry for camera activity, fix up the integrity hash, and flash it to
 the camera. A quick test showed that the green LED that normally illuminates while recording no longer turned
-on. Horrifying! On this device, the gimbal itself also deflects to the side when not recording, so it's not
+on. Horrifying! On this device, the gimbal itself also deflects down when not recording, so it's not
 completely stealth, but it still doesn't feel great.
 
 <video src="led-before-after.mp4" poster="led-before-after.jpg" width="1200" height="726"
