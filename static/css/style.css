@@ -213,6 +213,14 @@ pre {
   scrollbar-color: var(--border) transparent;
 }
 
+/* A fenced block with no language is prose - a prompt, a transcript - so wrap
+   it rather than making the reader scroll sideways. Highlighted code (Chroma
+   wraps it in .highlight) keeps overflow-x, where indentation carries meaning. */
+:not(.highlight) > pre {
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
 pre code {
   background: none;
   padding: 0;
