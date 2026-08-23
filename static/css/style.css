@@ -161,10 +161,7 @@ h3 {
 
 p {
   margin-bottom: 1rem;
-  text-align: justify;
-  text-justify: inter-character;
   text-wrap: pretty;
-  hyphens: auto;
 }
 
 ul, ol {
@@ -189,10 +186,7 @@ li + li {
 }
 
 ul > li {
-  text-align: justify;
-  text-justify: inter-character;
   text-wrap: pretty;
-  hyphens: auto;
 }
 
 ol > li {
@@ -264,7 +258,7 @@ img {
   border-radius: 6px;
 }
 
-/* Centre images narrower than the column, which justified text would left-align */
+/* Centre images narrower than the column, which would otherwise sit flush left */
 p:has(> img),
 p:has(> a > img) {
   text-align: center;
