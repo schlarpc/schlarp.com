@@ -8,12 +8,9 @@ images = ["webcam.jpg"]
 Over the past couple weeks I've been doing agent-driven reverse engineering of peripherals that happen to be
 within arm's reach. From those devices, I've come away with a full plaintext command shell inside my microphone,
 a webcam whose activity LED I can switch off while it records, and a key light that hands out memory writes to
-anyone on the WiFi.
-
-I've been setting LLMs loose against reverse engineering tasks for a while now to great success, and peripherals
-seemed like an ideal target: they're tiny computers attached to my computer, with a data connection to the host
-and usually a firmware update mechanism, so an agent has something to iterate against. The net outcome is better
-control and understanding of my machine.
+anyone on the WiFi. Peripherals have proven to be an ideal target for agentic RE - they're tiny computers
+attached to my computer, with a data connection to the host and usually a firmware update mechanism, so an
+agent has something to iterate against. The net outcome is better control and understanding of my machine.
 
 My process was pretty much the same for each of these devices: grab a copy of the device's firmware and
 associated update tool from the manufacturer, throw it into my
