@@ -41,41 +41,13 @@ evenings.
 
 ## Everything I own
 
-### ASUS ROG Swift PG42UQ monitor
-
-[GitHub repo](https://github.com/schlarpc/asus-pg42uq-firmware-re) - 1.2 hours of Claude churn, 13 prompts from me
-
-![ASUS ROG Swift PG42UQ monitor](monitor-cutout.webp)
-
-My ASUS ROG Swift PG42UQ monitor was where I started, because I got annoyed at the pop-up overlay that comes up
-every once in a while that tells me to run "pixel cleaning". I have never intentionally run pixel cleaning on
-this monitor and I never will, I don't care, and I would like for that overlay to go away forever. Maybe there's
-a debug menu or something that can turn it off, or worst case we patch a branch in the firmware?
-
-Claude found that the firmware has effectively no protection whatsoever - there's a two-slot A/B scheme and a
-simple checksum, but ultimately we can write whatever we want to the thing. Firmware updates run over an I2C bus
-bridged over USB.
-
-The pixel cleaning warning turns out to have no native way to disable it, and it'll always show up after 8 hours
-of runtime. Oh well. Claude did find the
-[appropriate area to patch](https://github.com/schlarpc/asus-pg42uq-firmware-re/blob/main/pixel_cleaning.md#4-minimal-patch)
-to kill the functionality though. I haven't actually been brave enough to write a modified firmware to the thing
-yet - it's a pretty expensive monitor - but I'll get there at some point.
-
-Another neat thing was exploring the DDC/CI interface. This is the control channel available over the display
-cable itself, allowing the host to change inputs and other settings. I believe ASUS offers this through their
-Windows utility, DisplayWidget, but that does little for me on Linux. So, now I have
-[a shell script](https://github.com/schlarpc/asus-pg42uq-firmware-re/blob/main/gameplus_poc.sh) that can flip
-through some of the DDC/CI features like the hardware crosshair or zoom overlays, FPS counter, and countdown
-timer. I might set up some of these on hotkeys in the future for easy access.
-
 ### Insta360 Link webcam
 
 [GitHub repo](https://github.com/schlarpc/insta360-link-firmware-re) - 3.7 hours of Claude churn, 33 prompts from me
 
 ![Insta360 Link webcam, its green activity LED lit](webcam.jpg)
 
-The next device I hit was my Insta360 Link webcam, which is a nice gimbaled pan-tilt-zoom camera that does face
+I use an Insta360 Link webcam, which is a nice gimbaled pan-tilt-zoom camera that does face
 tracking for automatically framing the shot. I wanted to know if it was possible to subvert the activity LED,
 like in the classic
 [iSeeYou](https://www.usenix.org/system/files/conference/usenixsecurity14/sec14-paper-brocker.pdf) exploit.
@@ -107,6 +79,34 @@ completely stealth, but it still doesn't feel great.
        autoplay loop muted playsinline preload="metadata"></video>
 
 *The LED behavior before and after patching.*
+
+### ASUS ROG Swift PG42UQ monitor
+
+[GitHub repo](https://github.com/schlarpc/asus-pg42uq-firmware-re) - 1.2 hours of Claude churn, 13 prompts from me
+
+![ASUS ROG Swift PG42UQ monitor](monitor-cutout.webp)
+
+My ASUS ROG Swift PG42UQ monitor was actually where I started, because I got annoyed at the pop-up overlay
+that comes up every once in a while that tells me to run "pixel cleaning". I have never intentionally run pixel
+cleaning on this monitor and I never will, I don't care, and I would like for that overlay to go away forever.
+Maybe there's a debug menu or something that can turn it off, or worst case we patch a branch in the firmware?
+
+Claude found that the firmware has effectively no protection whatsoever - there's a two-slot A/B scheme and a
+simple checksum, but ultimately we can write whatever we want to the thing. Firmware updates run over an I2C bus
+bridged over USB.
+
+The pixel cleaning warning turns out to have no native way to disable it, and it'll always show up after 8 hours
+of runtime. Oh well. Claude did find the
+[appropriate area to patch](https://github.com/schlarpc/asus-pg42uq-firmware-re/blob/main/pixel_cleaning.md#4-minimal-patch)
+to kill the functionality though. I haven't actually been brave enough to write a modified firmware to the thing
+yet - it's a pretty expensive monitor - but I'll get there at some point.
+
+Another neat thing was exploring the DDC/CI interface. This is the control channel available over the display
+cable itself, allowing the host to change inputs and other settings. I believe ASUS offers this through their
+Windows utility, DisplayWidget, but that does little for me on Linux. So, now I have
+[a shell script](https://github.com/schlarpc/asus-pg42uq-firmware-re/blob/main/gameplus_poc.sh) that can flip
+through some of the DDC/CI features like the hardware crosshair or zoom overlays, FPS counter, and countdown
+timer. I might set up some of these on hotkeys in the future for easy access.
 
 ### Shure MV7 microphone
 
