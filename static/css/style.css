@@ -267,6 +267,23 @@ video {
   border-radius: 6px;
 }
 
+/* Transparent product shots ("*-cutout.*") sit on a radial gradient painted
+   here rather than baked into the file, so the backdrop follows the palette.
+   The gradient fades to --bg at the edges, so the frame melts into the page.
+   The SVG layer on top is dither: this ramp is short and dark enough to band
+   on 8-bit displays where the browser doesn't dither the gradient itself. */
+img[src*="-cutout"] {
+  width: 100%;
+  aspect-ratio: 8 / 5;
+  object-fit: contain;
+  /* Percentage padding resolves against width even vertically, so this is
+     ~66px a side on a 1200px frame: product lands at ~82% of the frame height. */
+  padding: 5.5%;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"),
+    radial-gradient(circle at 50% 46%, #444b73 0%, var(--bg) 78%);
+}
+
 /* Centre images narrower than the column, which would otherwise sit flush left */
 p:has(> img),
 p:has(> a > img),

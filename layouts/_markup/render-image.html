@@ -1,14 +1,30 @@
 {{- /* Render markdown images. Page-bundle resources get downscaled for the page,
-       with a click-through to the original. SVGs and remote/static paths pass through. */ -}}
+       with a click-through to the original. SVGs and remote/static paths pass through.
+
+       Images named "*-cutout.*" are transparent product shots: they keep their
+       alpha and are re-encoded as WebP (a PNG with alpha is many times larger),
+       and the stylesheet paints the site's gradient behind them. */ -}}
 {{- $alt := .PlainText -}}
 {{- $src := .Destination -}}
 {{- $res := "" -}}
 {{- if not (or (hasPrefix $src "http") (hasPrefix $src "/")) -}}
   {{- $res = .Page.Resources.Get $src -}}
 {{- end -}}
+{{- $cutout := strings.Contains $src "-cutout" -}}
 {{- with $res -}}
   {{- if eq .MediaType.SubType "svg" -}}
     <img src="{{ .RelPermalink }}" alt="{{ $alt }}" loading="lazy" decoding="async">
+  {{- else if $cutout -}}
+    {{- /* No click-through: the "original" is a bare transparent image, which
+           renders without the backdrop the design depends on. Already-sized
+           WebP masters are served as-is rather than re-encoded a second time. */ -}}
+    {{- $w := . -}}
+    {{- if or (gt .Width 1200) (ne .MediaType.SubType "webp") -}}
+      {{- $w = .Fit "1200x1200 webp q90" -}}
+    {{- end -}}
+    {{- /* 8:5 to match the framing the stylesheet gives these, not the file's
+           own intrinsic ratio, so the reserved space is the rendered space. */ -}}
+    <img src="{{ $w.RelPermalink }}" alt="{{ $alt }}" width="1200" height="750" loading="lazy" decoding="async">
   {{- else if gt .Width 1200 -}}
     {{- $small := .Fit "1200x1200 q82" -}}
     <a href="{{ .RelPermalink }}"><img src="{{ $small.RelPermalink }}" alt="{{ $alt }}" width="{{ $small.Width }}" height="{{ $small.Height }}" loading="lazy" decoding="async"></a>
