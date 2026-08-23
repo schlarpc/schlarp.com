@@ -5,13 +5,15 @@ description = "Turning Claude loose on the firmware of five USB and WiFi periphe
 images = ["webcam.jpg"]
 +++
 
-This morning, I saw [this post by Eric Pardee](https://ericpardee.github.io/fire-hd-ownership/) about rooting
-an Amazon Fire HD using agentic AI tools. Like him and many other folks with interest in the space, I've been
-setting LLMs loose against reverse engineering tasks recently to great success. In the past couple of weeks,
-I've had a specific set of targets in mind: the tiny computers attached to my computer in the form of
-peripherals. Since these inherently have a data connection to the host and usually have a firmware update
-mechanism, it seemed like an ideal place to have an agent iterate, and the net outcome would be better control
-and understanding of my machine.
+Over the past couple weeks I've been doing agent-driven reverse engineering of peripherals that happen to be
+within arm's reach. From those devices, I've come away with a full plaintext command shell inside my microphone,
+a webcam whose activity LED I can switch off while it records, and a key light that hands out memory writes to
+anyone on the WiFi.
+
+I've been setting LLMs loose against reverse engineering tasks for a while now to great success, and peripherals
+seemed like an ideal target: they're tiny computers attached to my computer, with a data connection to the host
+and usually a firmware update mechanism, so an agent has something to iterate against. The net outcome is better
+control and understanding of my machine.
 
 My process was pretty much the same for each of these devices: grab a copy of the device's firmware and
 associated update tool from the manufacturer, throw it into my
@@ -30,13 +32,12 @@ In this directory is the firmware and update utility for ___. The device is also
 ```
 
 Depending on the results, there were different directions of follow-up, but you should get the general idea.
-Through this, I discovered some wild stuff: a full command shell on my microphone, an activity LED disable for
-my webcam, and unauthenticated network memory pokes of my key light over WiFi. Let's run through the list -
-each device links to a GitHub repo full of generated-slop docs and scripts, most of which have been validated
-live against real hardware. I've also included the effort each device took, pulled out of the Claude Code
-session transcripts. "Churn" is the time Claude was actually working, with the long idle gaps removed. "Prompts
-from me" is every message I typed, including the one-word ones telling it to keep going. All five devices
-together came out to about 13 hours of churn and 98 prompts, spread across two weeks of evenings.
+Let's run through the list - each device links to a GitHub repo full of generated-slop docs and scripts, most
+of which have been validated live against real hardware. I've also included the effort each device took, pulled
+out of the Claude Code session transcripts. "Churn" is the time Claude was actually working, with the long idle
+gaps removed. "Prompts from me" is every message I typed, including the one-word ones telling it to keep going.
+All five devices together came out to about 13 hours of churn and 98 prompts, spread across two weeks of
+evenings.
 
 ## Everything I own
 
