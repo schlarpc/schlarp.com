@@ -36,6 +36,8 @@ gaps removed. "Prompts from me" is every message I typed, including the one-word
 All five devices together came out to about 13 hours of churn and 98 prompts, spread across two weeks of
 evenings.
 
+I've shared everything in this post with the vendors involved.
+
 ## Everything I own
 
 ### Insta360 Link webcam
