@@ -12,6 +12,6 @@ It connects over a Crane plug, which only has two contacts, so the light tells t
 | Large                    | 1.5 kΩ     |
 | Small (visible override) | 3.3 kΩ     |
 
-For comparison, a standard Modbutton Lite is a dead short, effectively 0 Ω.
+For comparison, a standard Modbutton Lite is a dead short, effectively 0 Ω, and the GS15 treats it like the large button.
 
 I doubt anyone else will ever need to know this, but if you do, there it is.
